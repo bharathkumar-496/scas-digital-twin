@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
+:root {
+  --bg0: #05070a;
+  --bg1: #07090e;
+  --bg2: #0a0d12;
+  --panel: rgba(10, 15, 22, 0.72);
+  --panel-strong: rgba(10, 14, 20, 0.92);
+  --ink: #e6edf5;
+  --sub: #94a3b8;
+  --faint: #5b6778;
+  --line: rgba(255, 255, 255, 0.08);
+  --hl: rgba(255, 255, 255, 0.08);
+  --chip: rgba(255, 255, 255, 0.05);
+  --chip-strong: rgba(255, 255, 255, 0.1);
+  --shadow: 0 18px 48px -18px rgba(0, 0, 0, 0.75);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg0: #e4e5f7;
+  --bg1: #eceefb;
+  --bg2: #f4f5fd;
+  --panel: rgba(255, 255, 255, 0.78);
+  --panel-strong: rgba(255, 255, 255, 0.96);
+  --ink: #0f172a;
+  --sub: #475569;
+  --faint: #94a3b8;
+  --line: rgba(15, 23, 42, 0.08);
+  --hl: rgba(255, 255, 255, 0.95);
+  --chip: rgba(15, 23, 42, 0.045);
+  --chip-strong: rgba(15, 23, 42, 0.08);
+  --shadow: 0 18px 48px -20px rgba(55, 48, 163, 0.35);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-panel: var(--panel);
+  --color-panel-strong: var(--panel-strong);
+  --color-ink: var(--ink);
+  --color-sub: var(--sub);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-chip: var(--chip);
+  --color-chip-strong: var(--chip-strong);
+  --color-bg0: var(--bg0);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--bg0);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: var(--panel);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: inset 0 1px 0 0 var(--hl), 0 0 0 1px var(--line), var(--shadow);
+  border-radius: 16px;
+}
+
+.glass-strong {
+  background: var(--panel-strong);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  box-shadow: inset 0 1px 0 0 var(--hl), 0 0 0 1px var(--line), var(--shadow);
+  border-radius: 20px;
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.25) transparent;
+}
+
+input[type="range"].slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--fill, #22d3ee) var(--pct, 50%), var(--chip-strong) var(--pct, 50%));
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--fill, #22d3ee);
+  box-shadow: 0 0 12px var(--fill, #22d3ee);
+}
+input[type="range"].slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--fill, #22d3ee);
+  box-shadow: 0 0 12px var(--fill, #22d3ee);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(8px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ping-soft {
+  0% { box-shadow: 0 0 0 0 currentColor; }
+  70% { box-shadow: 0 0 0 6px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@keyframes alarm {
+  0%, 100% { background-color: rgba(244, 63, 94, 0.92); }
+  50% { background-color: rgba(159, 18, 57, 0.92); }
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+
+.anim-rise { animation: rise 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.anim-fade { animation: fade 0.25s ease both; }
+.live-dot { animation: ping-soft 1.6s infinite; border-radius: 999px; }
+.alarm-bg { animation: alarm 0.9s infinite; }
+.spin-slow { animation: spin-slow 8s linear infinite; }
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.25), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+@keyframes tourbar { from { transform: scaleX(0); transform-origin: left; } to { transform: scaleX(1); transform-origin: left; } }
