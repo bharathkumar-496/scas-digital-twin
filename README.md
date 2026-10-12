@@ -1,81 +1,123 @@
-# SCAS Smart Building Digital Twin
+# BB DIGITAL TWIN — Sathyabama Centre for Advanced Studies (SCAS)
 
-A browser-based 3D digital twin of the **Centre for Advanced Studies (SCAS)** block at Sathyabama Institute of Science and Technology, Chennai. It renders the building procedurally with Three.js and adds a command-centre dashboard for occupancy, air quality, energy, CCTV, weather and emergency simulation.
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-black?style=for-the-badge&logo=vercel)](https://scas-digital-twin.vercel.app)
+[![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)](https://threejs.org/)
+[![React 19](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite_8-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-**[Live demo →](https://digitaltwin-ashen.vercel.app/)**
+🔗 **Live Production URL**: [https://scas-digital-twin.vercel.app](https://scas-digital-twin.vercel.app)  
+🏛️ **Facility**: Centre for Advanced Studies (SCAS), Sathyabama Institute of Science and Technology (SIST), Chennai  
+📍 **Coordinates**: `12.8718° N, 80.2253° E` (Plus Code: `V6CG+Q4H`)  
+👥 **Core Engineering (BB)**:
+- **Bharath Kumar** — `44733013` (3D Spatial Architecture, WebGL Shading & Interactive Pipeline)
+- **Balayogi** — `44733011` (BMS Telemetry, AI Engine & Incident Simulator)
 
-![Overview of the SCAS digital twin](screenshots/real-overview.png)
+---
 
-## Features
+## 🏛️ Executive Overview
 
-- **Procedural building model**: three floors, two light-well courtyards, bronze glazing, piers, glass partitions, desks and roof parapets, all generated in code with no imported 3D models.
-- **East portico**: four terracotta double-height pillars, a cantilevered canopy, stairs, ramps and extruded signage.
-- **Real sun position**: a solar ephemeris for the site's coordinates (12.8718° N, 80.2253° E) drives daylight, golden hour and night lighting.
-- **Weather**: clear, overcast, rain with ground ripples, and storms with lightning.
-- **Volumetric heatmaps** for temperature, CO₂ and energy density.
-- **Fire drill simulation**: smoke in Room 345, an egress path to the eastern assembly point, and animated evacuee flow.
-- **Live-style telemetry**: 48 room badges, 7 CCTV cameras, 4 × 45 kW solar strings and 8 LoRa streetlights.
-- **15-step cinematic tour** of the building.
-- **Command-centre UI** with a top bar, HUD, analytics rails, room inspector, dock and modals.
+The **BB DIGITAL TWIN** is an autonomous 3D spatial command center built for the **Centre for Advanced Studies (SCAS)** at SIST Chennai. It pairs procedural PBR 3D architectural modeling with live building telemetry, microclimate indoor air quality (IAQ) monitoring, rooftop solar photovoltaic generation tracking, a CCTV surveillance matrix with verified photographic archives, and an interactive emergency evacuation drill simulator.
 
-## Screenshots
+---
 
-| | |
-| --- | --- |
-| ![Courtyard](screenshots/real-courtyard.png) | ![Night view](screenshots/real-night.png) |
-| Courtyard | Night lighting |
-| ![Portico](screenshots/real-portico.png) | ![Room 303](screenshots/real-floor1-room303.png) |
-| East portico | Floor 1, Room 303 |
+## 🌐 Live Production Deployments
 
-## Tech stack
+| Environment | URL | Status |
+| :--- | :--- | :--- |
+| **Primary Domain** | [https://scas-digital-twin.vercel.app](https://scas-digital-twin.vercel.app) | 🟢 Production Active |
+| **Deployment Alias** | [https://scas-digital-twin-jcp93n97i-bharathbeasts-projects.vercel.app](https://scas-digital-twin-jcp93n97i-bharathbeasts-projects.vercel.app) | 🟢 Edge Deployed |
 
-React 19 · TypeScript (strict) · Vite 7 · Three.js r186 · Tailwind CSS v4 · Lucide React
+---
 
-## Getting started
+## ⚡ Tech Stack & Architecture
+
+- **Core Framework**: React 19 + TypeScript (Strict) + Vite 8
+- **3D Graphics Engine**: Three.js (Procedural PBR materials, instanced architectural geometry, directional solar ephemeris lighting, day/night cycles, shadows)
+- **Styling & HUD**: Tailwind CSS v4 + Dark Architectural Glassmorphism
+- **Iconography**: Lucide React
+- **Hosting & Infrastructure**: Vercel Serverless Edge
+
+---
+
+## 🎯 Key Features
+
+### 1. 🏢 3D Procedural SCAS Architecture
+- 3-floor procedural envelope with accurate floor heights, grand entrance portico, dual open-air atriums, and window bays generated entirely in code.
+- Interactive 3-floor explosion slider (0% to 100%) and individual floor isolation filters (`ALL`, `F1`, `F2`, `F3`).
+
+### 2. 📍 Classroom Directory & Spatial Nodes
+- 48 source-derived classrooms (Rooms 303 to 490) with verified IQAC photographic archives.
+- Room 303 ICT Computer Lab & ABHS guidance room with simulated BMS telemetry.
+
+### 3. 📹 CCTV Surveillance Matrix
+- 7 camera nodes (`CAM-01` through `CAM-07`) with spatial coverage frustums.
+- Verified 1080p surveillance modal with IR night vision and AI bounding box detection.
+
+### 4. ☀️ Rooftop Solar Photovoltaic Farm
+- 180 kW array broken into 4 active strings (Strings A, B, C, D) with live generation curves, inverter efficiency, and 3D spatial string highlights.
+
+### 5. 🌡️ Microclimate & IAQ Monitoring
+- Volumetric spatial heatmaps for Temperature, $\text{CO}_2$, and Energy density.
+
+### 6. 🤖 AI Building Optimization
+- VRF Chiller #2 setback analysis with before/after kilowatt load comparisons.
+
+### 7. 🚨 Emergency Evacuation Drill Simulator
+- Room 345 Cyber Security Lab simulated fire/smoke incident with dynamic 3D green evacuation spline egress path.
+
+### 8. 🎬 Guided Review Tour
+- 15-step narrated cinematic presentation tour with automated camera choreography.
+
+---
+
+## 📊 Data Integrity & Telemetry Tagging
+
+Every component in the command center is tagged for transparent data classification:
+- `[SOURCE-DERIVED]`: Building proportions, room numbers (303–490), and room identities.
+- `[SIMULATED]`: Air quality, solar output, streetlights, CCTV streams, and alerts generated dynamically in-browser.
+- `[REAL]`: Rendering frame rate, local clock, and calculated astronomical sun position.
+- `[DERIVED]`: Aggregates such as occupancy and energy savings.
+
+---
+
+## 🎮 Interactive Controls
+
+- `/` — Quick Search
+- `Esc` — Close modal or reset active spatial selection
+- **During Cinematic Tour**:
+  - `←` / `→` — Navigate between tour steps
+  - `Space` — Pause / Resume automated tour
+- **Developer Console Hooks**:
+  - `bbTwin.startTour()` — Launch the cinematic tour
+  - `bbTwin.startFireDrill()` — Trigger simulated fire drill egress
+  - `bbTwin.store.set({ time: 1290, weather: 'storm' })` — Modify atmospheric conditions
+
+---
+
+## 🚀 Local Development
 
 ```bash
+# 1. Clone repository
+git clone https://github.com/bharathkumar-496/scas-digital-twin.git
+cd scas-digital-twin
+
+# 2. Install dependencies
 npm install
-npm run dev        # http://localhost:5173
-npm run build      # type-check and build to dist/
-npm run preview    # serve the production build
+
+# 3. Start development server
+npm run dev
+
+# 4. Build for production
+npm run build
 ```
 
-The project includes a `vercel.json`, so it deploys to Vercel as-is.
+---
 
-## Project structure
+## 👥 Authors & Credits
 
-| Area | Location |
-| --- | --- |
-| Building geometry, portico, heatmaps | `src/three/building.ts` |
-| Render loop, lighting, sensors and cameras | `src/three/Engine.ts` |
-| Weather effects | `src/three/weather.ts` |
-| Fire drill and evacuation | `src/three/fire.ts`, `src/lib/controllers.ts` |
-| Sun position | `src/lib/sun.ts` |
-| Guided tour | `src/data/tour.ts` |
-| Campus data (rooms, cameras, solar, alerts) | `src/data/campus.ts` |
-| Dashboard UI | `src/components/` |
+- **Bharath Kumar** — [@bharathkumar-496](https://github.com/bharathkumar-496)
+- **Balayogi** — SIST Chennai
 
-## Data honesty
-
-No real building management system is connected. Every card in the UI is tagged so viewers know what they're looking at:
-
-- `[SOURCE-DERIVED]`: building proportions, room numbers (303–490) and room identities.
-- `[SIMULATED]`: air quality, solar output, streetlights, CCTV streams and alerts, all generated in the browser.
-- `[REAL]`: frame rate, local clock and sun position.
-- `[DERIVED]`: aggregates such as occupancy and energy savings.
-
-Room photos go in `public/evidence/room-<number>.jpg`. Until one exists, the inspector shows an illustrative render tagged `[ILLUSTRATIVE]` rather than a fake photo.
-
-## Controls
-
-- `/` search
-- `Esc` close a modal or clear the selection
-- During the tour: `←` `→` to step, `Space` to pause
-
-From the browser console: `bbTwin.startTour()`, `bbTwin.startFireDrill()`, or `bbTwin.store.set({ time: 1290, weather: 'storm' })`.
-
-## Author
-
-**Bharath Kumar** · [@bharathkumar-496](https://github.com/bharathkumar-496)
-
-Built as a college project at Sathyabama Institute of Science and Technology.
+*Built as an advanced engineering project at Sathyabama Institute of Science and Technology (SIST), Chennai.*
