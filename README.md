@@ -22,6 +22,21 @@ The **BB DIGITAL TWIN** is an autonomous 3D spatial command center built for the
 
 ---
 
+## 📸 Screenshots
+
+![SCAS digital twin overview](screenshots/real-overview.png)
+
+| | |
+| :---: | :---: |
+| ![Floor 1 and Room 303](screenshots/real-floor1-room303.png) | ![Courtyard](screenshots/real-courtyard.png) |
+| **Floor 1 · Room 303** | **Open-air courtyard** |
+| ![East portico](screenshots/real-portico.png) | ![Portico signage](screenshots/real-portico-sign.png) |
+| **East entrance portico** | **Portico signage** |
+| ![Night view](screenshots/real-night.png) | |
+| **Night lighting** | |
+
+---
+
 ## 🌐 Live Production Deployments
 
 | Environment | URL | Status |
