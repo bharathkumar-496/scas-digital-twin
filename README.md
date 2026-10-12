@@ -2,6 +2,8 @@
 
 A browser-based 3D digital twin of the **Centre for Advanced Studies (SCAS)** block at Sathyabama Institute of Science and Technology, Chennai. It renders the building procedurally with Three.js and adds a command-centre dashboard for occupancy, air quality, energy, CCTV, weather and emergency simulation.
 
+**[Live demo →](https://digitaltwin-ashen.vercel.app/)**
+
 ![Overview of the SCAS digital twin](screenshots/real-overview.png)
 
 ## Features
